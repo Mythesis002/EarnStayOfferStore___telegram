@@ -1,5 +1,5 @@
 {
-  "name": "earnstayserver",
+  "name": "earnstayofferstore",
   "version": "1.0.0",
   "description": "Your server application description",
   "main": "src/server.js",
