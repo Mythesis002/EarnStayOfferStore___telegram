@@ -155,7 +155,7 @@ app.post('/webhook', async (req, res) => {
 
 // Set webhook URL
 axios.post(`${TELEGRAM_API_URL}/setWebhook`, {
-  url: 'https://ac35-2409-4063-4284-a9b0-bc70-3cec-67eb-4c58.ngrok-free.app/webhook' // Replace this with your actual ngrok URL
+  url: 'https://earnstayofferstore-telegram.onrender.com/webhook' // Replace this with your actual ngrok URL
 }).then(response => {
   console.log('Webhook set:', response.data);
 }).catch(error => {
