@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const cheerio = require('cheerio');
-
 const app = express();
 app.use(bodyParser.json());
 
@@ -14,24 +13,20 @@ async function extractAndParseCaption(caption) {
   if (!caption) {
     return null;
   }
-
   let title = '';
   let price = '';
   let url = '';
   let brand = '';
-
   // Extract URL
   const urlMatch = caption.match(/https?:\/\/[^\s]+/);
   if (urlMatch) {
     url = await resolveShortenedUrl(urlMatch[0]);
   }
-
   // Remove the URL from the caption for easier processing of the remaining parts
   const captionWithoutUrl = caption.replace(urlMatch ? urlMatch[0] : '', '').trim();
 
   // Split the remaining caption into lines
   const lines = captionWithoutUrl.split('\n').map(line => line.trim()).filter(line => line);
-
   // Extract price from the lines
   const priceMatch = captionWithoutUrl.match(/(?:₹|Rs|@|At\.?)\s?(\d+[\d,.]*)/);
   if (priceMatch) {
