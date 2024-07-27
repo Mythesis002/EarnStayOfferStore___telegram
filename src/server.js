@@ -17,6 +17,7 @@ async function extractAndParseCaption(caption) {
   let price = '';
   let url = '';
   let brand = '';
+  
   // Extract URL
   const urlMatch = caption.match(/https?:\/\/[^\s]+/);
   if (urlMatch) {
